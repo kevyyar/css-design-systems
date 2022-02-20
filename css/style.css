@@ -12,6 +12,8 @@
   --lightGrey: #f2f4f6;
 
   /* Define Colors intentions */
+  --primary: var(--green);
+  --danger: var(--red);
   --background: var(--lightGrey);
   --textColor: var(--black);
   --lineColor: var(--grey);
@@ -28,6 +30,12 @@
   --h4: 1.563rem;
   --h5: 1.25rem;
   --textSmall: 0.8rem;
+
+  /* Elevation (box shadows)*/
+  --level-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.01);
+  --level-2: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --level-3: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --level-4: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
 
 /* FROM TypeScale (type-scale.com) */
@@ -51,7 +59,7 @@ p a,
 blockquote a {
   color: var(--black);
   text-decoration: none;
-  border-bottom: 2px solid var(--green);
+  border-bottom: 2px solid var(--primary);
 }
 
 h1,
@@ -106,6 +114,7 @@ blockquote {
   margin: 10px;
   padding: 20px;
   background-color: var(--white);
+  box-shadow: var(--level-3);
 }
 
 label {
@@ -136,6 +145,37 @@ select {
 
 hr {
   border-top: var(--line);
+}
+
+button {
+  --buttonColor: var(--primary);
+  appearance: none;
+  color: var(--textColor);
+  background-color: var(--buttonColor);
+  border: none;
+  border-radius: 10px;
+  padding: 5px 25px;
+  box-shadow: var(--level-1);
+  transition: 0.3s ease-in-out box-shadow;
+}
+
+button:hover {
+  box-shadow: var(--level-2);
+  cursor: pointer;
+}
+
+button[disabled] {
+  opacity: 0.4;
+}
+
+/* Cancel can mean anything */
+button.cancel {
+  --buttonColor: var(--danger);
+  --textColor: var(--white);
+}
+
+button.small {
+  font-size: var(--textSmall);
 }
 
 /* Least to Most (specificity) */
