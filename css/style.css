@@ -14,6 +14,10 @@
   /* Define Colors intentions */
   --background: var(--lightGrey);
   --textColor: var(--black);
+  --lineColor: var(--grey);
+
+  /* Styles */
+  --line: 1px solid var(--lineColor);
 
   /* Type */
   --headingFont: "Space Mono", monospace;
@@ -39,6 +43,15 @@ body {
 
 p {
   margin-bottom: 1rem;
+  max-width: 60em;
+}
+
+/* link inside a paragraph */
+p a,
+blockquote a {
+  color: var(--black);
+  text-decoration: none;
+  border-bottom: 2px solid var(--green);
 }
 
 h1,
@@ -84,10 +97,46 @@ body {
   color: var(--textColor);
 }
 
-/* .dark {
+.dark {
   --background: var(--black);
   --textColor: var(--lightGrey);
-} */
+}
+
+blockquote {
+  margin: 10px;
+  padding: 20px;
+  background-color: var(--white);
+}
+
+label {
+  display: block;
+  font-size: var(--textSmall);
+}
+
+input,
+textarea {
+  padding: 2px 5px;
+  border: var(--line);
+  border-radius: 4px;
+}
+
+textarea {
+  width: 100%;
+  height: 5rem;
+}
+
+::placeholder {
+  color: var(--grey);
+}
+
+select {
+  border: var(--line);
+  border-radius: 4px;
+}
+
+hr {
+  border-top: var(--line);
+}
 
 /* Least to Most (specificity) */
 
