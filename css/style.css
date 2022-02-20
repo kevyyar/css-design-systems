@@ -21,6 +21,7 @@
   /* Styles */
   --line: 1px solid var(--lineColor);
 
+
   /* Type */
   --headingFont: "Space Mono", monospace;
   --bodyFont: "Work Sans", sans-serif;
@@ -178,6 +179,37 @@ button.small {
   font-size: var(--textSmall);
 }
 
+/* can be used as a container to center content */
+.layout {
+  margin: 0 auto;
+  width: 95%;
+}
+
+/* default grid layout */
+.grid {
+  --gridCols: 2;
+  display: grid;
+  grid-template-columns: repeat(var(--gridCols), 1fr);
+}
+
+.cols-3 {
+  --gridCols: 3;
+}
+
+/* default flex layout */
+.flex {
+  --justifyContent: space-between;
+  display: flex;
+  justify-content: var(--justifyContent);
+}
+
+.flex-center {
+  --justifyContent: center;
+}
+
+.flex-around {
+  --justifyContent: space-around;
+}
 /* Least to Most (specificity) */
 
 /* h1, div */
