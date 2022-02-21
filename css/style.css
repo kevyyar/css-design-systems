@@ -39,12 +39,23 @@
   --level-3: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --level-4: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 
+  /* Positioning */
+  --containerPadding: 2.5%;
+  --headerHeight: 3rem;
+
 }
 
 /* FROM TypeScale (type-scale.com) */
 html {
   font-size: var(--baseFontSize);
+  box-sizing: border-box;
 } /*18px*/
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 
 body {
   font-family: var(--bodyFont);
@@ -54,6 +65,49 @@ body {
   color: var(--textColor);
 }
 
+/* Elements */
+header {
+  --headerBackground: var(--darkBlue);
+    color: #fff;
+    height: 3rem;
+    background-color: var(--headerBackground);
+    box-shadow: var(--level-2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--containerPadding);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+header nav a {
+  color: #fff; 
+  text-decoration: none;
+}
+
+header a + a {
+  margin-left: 10px;
+}
+
+footer {
+  --footerTextColor: var(--grey);
+  color: var(--footerTextColor);
+  background-color: var(--black);
+  padding: 1rem var(--containerPadding);
+  text-align: center;
+}
+
+footer a {
+  color: var(--footerTextColor);
+}
+
+footer p {
+  margin-bottom: 0;
+  max-width: none;
+}
+  
 p {
   margin-bottom: 1rem;
   max-width: 60em;
@@ -180,8 +234,9 @@ button.small {
 
 /* can be used as a container to center content */
 .layout {
-  margin: 0 auto;
-  width: 95%;
+  /* margin: 0 auto; */
+  /* width: 95%; */
+  padding: calc(3rem + var(--headerHeight)) var(--containerPadding);
 }
 
 /* default grid layout */
@@ -226,6 +281,11 @@ button.small {
   .flex {
     display: flex;
   }
+}
+
+.fake-logo {
+  font-size: var(--baseFontSize);
+  margin: 0;
 }
 
 /* Least to Most (specificity) */
