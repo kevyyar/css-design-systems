@@ -83,7 +83,7 @@ header {
 }
 
 header nav a {
-  color: #fff; 
+  color: #fff;
   text-decoration: none;
 }
 
@@ -107,7 +107,7 @@ footer p {
   margin-bottom: 0;
   max-width: none;
 }
-  
+
 p {
   margin-bottom: 1rem;
   max-width: 60em;
@@ -293,3 +293,5 @@ button.small {
 /* h1, div */
 /* class, attribute, [type="text"] */
 /* IDs */
+
+
